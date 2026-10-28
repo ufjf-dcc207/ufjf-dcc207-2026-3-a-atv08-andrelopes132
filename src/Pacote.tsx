@@ -5,7 +5,7 @@ type PacoteProps = {
     pacote : PacoteType;
 }
 
-export default function Pacote({ pacote } : PacoteProps){
+export default function Pacote({pacote} : PacoteProps){
     return (
         <>
             <div className="pacote">
