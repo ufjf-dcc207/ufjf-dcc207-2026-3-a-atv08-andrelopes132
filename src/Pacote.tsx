@@ -13,9 +13,11 @@ export default function Pacote({pacote, acaoExcluir} : PacoteProps){
 
                 <dt>id</dt>                     <dd title={pacote.id}>{pacote.id.substring(0,8)}</dd>
 
+                <dt>Altura (cm)</dt>            <dd>{pacote.altura}</dd>
+
                 <dt>Largura (cm)</dt>           <dd>{pacote.largura}</dd>
 
-                <dt>Altura (cm)</dt>            <dd>{pacote.altura}</dd>
+                <dt>Profundidade (cm)</dt>      <dd>{pacote.profundidade}</dd>
 
                 <dt>Cubagem (m³)</dt>           <dd>
                                                     {
@@ -25,8 +27,6 @@ export default function Pacote({pacote, acaoExcluir} : PacoteProps){
                                                         pacote.profundidade/100
                                                     }
                                                 </dd>
-
-                <dt>Profundidade (cm)</dt>      <dd>{pacote.profundidade}</dd>
 
                 <dt>Peso (kg)</dt>              <dd>{pacote.peso}</dd>
                 

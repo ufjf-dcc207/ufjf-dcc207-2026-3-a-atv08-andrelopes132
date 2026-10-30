@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Pacote from './Pacote'
 import type { PacoteType } from './types'
+import ListagemDePacotes from './ListagemDePacotes'
 
 const data:Array<PacoteType> = [
     {
@@ -42,10 +43,7 @@ function App() {
     <>
       <h2>Pacotes</h2>
       <div className="pacotes">
-        {pacotes.map(
-          p =>             
-              <Pacote pacote={p} key={p.id} acaoExcluir={excluirPacote}/>            
-        )}
+        <ListagemDePacotes pacotes={pacotes} acaoExcluir={excluirPacote}/>
         
       </div>
     </>
