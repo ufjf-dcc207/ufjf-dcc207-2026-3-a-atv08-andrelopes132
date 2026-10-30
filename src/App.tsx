@@ -21,11 +21,13 @@ const data:Array<PacoteType> = [
 ]
 
 function App() {
+  const [pacotes, setPacotes] = useState(data);
+
   return (
     <>
       <h2>Pacotes</h2>
       <div className="pacotes">
-        {data.map(
+        {pacotes.map(
           p => <Pacote pacote={p} key={p.id}/>
         )}
         
