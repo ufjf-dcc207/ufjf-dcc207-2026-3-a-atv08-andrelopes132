@@ -23,7 +23,7 @@ const data:Array<PacoteType> = [
 function App() {
   const [pacotes, setPacotes] = useState(data);
 
-  function excluirPacote(id : PacoteType){
+  function excluirPacote(id : string){
 
     /*
     const novoPacotes = [];
@@ -35,7 +35,7 @@ function App() {
     */
 
 
-    setPacotes(pacotes.filter(p => p!==id));
+    setPacotes(pacotes.filter(p => p.id !== id));
   }
 
   return (
