@@ -11,20 +11,24 @@ export default function Pacote({pacote, acaoExcluir} : PacoteProps){
         <>
             <div className="pacote">
 
-                <dt>id</dt>
-                <dd title={pacote.id}>{pacote.id.substring(0,8)}</dd>
+                <dt>id</dt>                     <dd title={pacote.id}>{pacote.id.substring(0,8)}</dd>
 
-                <dt>Largura (cm)</dt>           
-                <dd>{pacote.largura}</dd>
+                <dt>Largura (cm)</dt>           <dd>{pacote.largura}</dd>
 
-                <dt>Altura (cm)</dt>            
-                <dd>{pacote.altura}</dd>
+                <dt>Altura (cm)</dt>            <dd>{pacote.altura}</dd>
 
-                <dt>Profundidade (cm)</dt>      
-                <dd>{pacote.profundidade}</dd>
+                <dt>Cubagem (m³)</dt>           <dd>
+                                                    {
+                                                        400 * 
+                                                        pacote.largura/100 *
+                                                        pacote.altura/100 *
+                                                        pacote.profundidade/100
+                                                    }
+                                                </dd>
 
-                <dt>Peso (kg)</dt>              
-                <dd>{pacote.peso}</dd>
+                <dt>Profundidade (cm)</dt>      <dd>{pacote.profundidade}</dd>
+
+                <dt>Peso (kg)</dt>              <dd>{pacote.peso}</dd>
                 
                 <dd>
                     <button onClick={() => acaoExcluir(pacote.id)}>Excluir</button>
