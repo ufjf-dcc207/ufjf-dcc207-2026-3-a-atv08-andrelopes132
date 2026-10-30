@@ -12,7 +12,7 @@ export default function ListagemDePacotes({pacotes, acaoExcluir} : ListagemDePac
     
     const [ordenacao, setOrdenacao] = useState("altura");
     
-    function mudaOrdenacao(evento){
+    function mudaOrdenacao(evento : any){
         setOrdenacao(evento.target.value);
     }
 

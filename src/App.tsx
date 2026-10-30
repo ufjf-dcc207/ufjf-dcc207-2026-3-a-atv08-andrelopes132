@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Pacote from './Pacote'
+// import Pacote from './Pacote'
 import type { PacoteType } from './types'
 import ListagemDePacotes from './ListagemDePacotes'
 
