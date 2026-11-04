@@ -2,15 +2,16 @@ import { useState } from "react";
 import "./ListagemDePacotes.css"
 import Pacote from "./Pacote";
 import type { PacoteType } from "./types"
+import type { AcaoPacoteExcluir } from "./pacoteReducer";
 
 type ListagemDePacotesProps = {
     pacotes:Array<PacoteType>;
-    acaoExcluir : (id : string)=>void;
+    dispacher : React.ActionDispatch<[action: AcaoPacoteExcluir]>;
 }
 
-export default function ListagemDePacotes({pacotes, acaoExcluir} : ListagemDePacotesProps){
+export default function ListagemDePacotes({pacotes, dispacher} : ListagemDePacotesProps){
     
-    const [ordenacao, setOrdenacao] = useState("altura");
+    const [ordenacao, setOrdenacao] = useState<"altura" | "largura" | "profundidade" | "peso">("altura");   
     
     function mudaOrdenacao(evento : any){
         setOrdenacao(evento.target.value);
@@ -30,7 +31,7 @@ export default function ListagemDePacotes({pacotes, acaoExcluir} : ListagemDePac
                 {pacotes
                 .sort((x,y) => y[ordenacao] - x[ordenacao])
                 .map(p => (
-                <Pacote pacote={p} key={p.id} acaoExcluir={acaoExcluir}/>))}
+                <Pacote pacote={p} key={p.id} dispacher={dispacher}/>))}
             </dl>
         </div>
     )
