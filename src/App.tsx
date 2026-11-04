@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react'
+import { useReducer } from 'react'
 import './App.css'
 // import Pacote from './Pacote'
 import type { PacoteType } from './types'
