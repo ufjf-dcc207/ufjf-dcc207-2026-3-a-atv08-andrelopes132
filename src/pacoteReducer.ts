@@ -61,5 +61,4 @@ function acaoPeso(state: Array<PacoteType>, action: AcaoPacotePeso) {
 
     }
     );
-    return state;
 }

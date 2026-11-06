@@ -4,8 +4,9 @@ import './App.css'
 import type { PacoteType } from './types'
 import ListagemDePacotes from './ListagemDePacotes'
 import pacoteReducer from './pacoteReducer'
+import { PacotesContext } from './PacoteContext'
 
-const data:Array<PacoteType> = [
+const data : Array<PacoteType> = [
     {
         id: "f6a76c5e-3b13-45c0-9e61-3979c945acc0",
         largura: 20.0,
@@ -27,6 +28,7 @@ function App() {
   const [pacotes, dispacher] = useReducer(pacoteReducer, data);
 
   return (
+    <PacotesContext value={pacotes}>
     <>
       <h2>Pacotes</h2>
       <div className="pacotes">
@@ -34,6 +36,7 @@ function App() {
         
       </div>
     </>
+    </PacotesContext>
   )
 }
 

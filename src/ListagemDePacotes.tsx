@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./ListagemDePacotes.css"
 import Pacote from "./Pacote";
-import type { PacoteType } from "./types"
+//import type { PacoteType } from "./types"
 import type { AcaoPacote } from "./pacoteReducer";
+import { PacotesContext } from "./PacoteContext";
 
 type ListagemDePacotesProps = {
-    pacotes:Array<PacoteType>;
     dispacher : React.ActionDispatch<[action: AcaoPacote]>;
 }
 
-export default function ListagemDePacotes({pacotes, dispacher} : ListagemDePacotesProps){
+export default function ListagemDePacotes({dispacher} : ListagemDePacotesProps){
+
+    const pacotes = useContext(PacotesContext);
     
     const [ordenacao, setOrdenacao] = useState<"altura" | "largura" | "profundidade" | "peso">("altura");   
     
