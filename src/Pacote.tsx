@@ -1,13 +1,15 @@
+import { useContext } from "react";
 import "./Pacote.css"
-import type { AcaoPacote } from "./pacoteReducer";
+//import type { AcaoPacote } from "./pacoteReducer";
 import type { PacoteType } from "./types"
+import { PacotesDispacherContext } from "./PacoteContext";
 
 type PacoteProps = {
     pacote : PacoteType;
-    dispacher : React.ActionDispatch<[action: AcaoPacote]>;
 }
 
-export default function Pacote({pacote, dispacher} : PacoteProps){
+export default function Pacote({pacote} : PacoteProps){
+    const dispacher = useContext(PacotesDispacherContext)!;
     return (
         <>
             <div className="pacote">
